@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+html {
+  scroll-behavior: smooth;
+}
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-neon-lime: #D9F99D;
+  --color-neon-yellow: #F7FF9E;
+  --color-electric-purple: #A78BFA;
+  --color-cyber-lime: #BFFF00;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+  }
+}
+
+body {
+  @apply font-sans antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply tracking-tight;
+}
+
+/* ── GPU-accelerated CSS ticker for LogoTicker ── */
+.logo-ticker-track {
+  display: flex;
+  gap: 6rem;
+  animation: ticker-scroll 40s linear infinite;
+  will-change: transform;
+}
+
+.logo-ticker-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes ticker-scroll {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ── Mask fade for ticker edges ── */
+.mask-linear-fade {
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+
+/* ── GPU hint for scroll-animated cards ── */
+.will-change-transform {
+  will-change: transform, opacity;
+}
+
+/* ── Mobile menu grid animation (GPU-friendly) ── */
+.mobile-menu-grid {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+
+.mobile-menu-grid[data-open="true"] {
+  grid-template-rows: 1fr;
+}
+
+.mobile-menu-grid>div {
+  overflow: hidden;
+}
+
+/* ── Dark mode logo inversion ── */
+.dark .logo-invert {
+  filter: invert(1);
+}
+
+/* ═══════════════════════════════════════════════
+   Accessibility: Respect user motion preferences
+   WCAG 2.1 SC 2.3.3
+   ═══════════════════════════════════════════════ */
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  .logo-ticker-track {
+    animation: none;
+  }
+}

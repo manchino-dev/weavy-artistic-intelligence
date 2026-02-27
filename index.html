@@ -4,19 +4,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Primary SEO -->
+  <title>Weavy — Artistic Intelligence</title>
   <meta name="description"
     content="Weavy — Artistic Intelligence. Turn your creative vision into scalable workflows. Access all AI models and professional editing tools in one node-based platform." />
-  <title>Weavy — Artistic Intelligence</title>
+  <link rel="canonical" href="https://weavy.ai/" />
 
-  <!-- Preconnect to external origins for speed -->
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://weavy.ai/" />
+  <meta property="og:title" content="Weavy — Artistic Intelligence" />
+  <meta property="og:description"
+    content="Turn your creative vision into scalable workflows. Access all AI models and professional editing tools in one node-based platform." />
+  <meta property="og:image" content="/images/hero-diffusion.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Weavy — Artistic Intelligence" />
+  <meta name="twitter:description"
+    content="Turn your creative vision into scalable workflows. Access all AI models and professional editing tools in one node-based platform." />
+  <meta name="twitter:image" content="/images/hero-diffusion.webp" />
+
+  <!-- Inline SVG favicon — no extra file needed -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎨</text></svg>" />
+
+  <!-- Preconnect to font origins -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="preconnect" href="https://picsum.photos" />
 
-  <!-- Google Fonts — swap to avoid invisible text flash -->
+  <!-- Preload the LCP image -->
+  <link rel="preload" as="image" href="/images/hero-diffusion.webp" fetchpriority="high" />
+
+  <!-- Preload the primary font file to avoid render delay -->
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="https://fonts.gstatic.com/s/inter/v20/UcC73FwrK3iLTeHuS_nVMrMxCp50SjIa1ZL7W0Q5nw.woff2" />
+
+  <!--
+    Google Fonts loaded with display=optional to prevent render-blocking.
+    display=optional means: if the font isn't cached, use fallback immediately
+    and don't block LCP. On repeat visits the font will be cached.
+  -->
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
-    rel="stylesheet" />
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=optional&family=JetBrains+Mono:wght@400;500&display=optional"
+    rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap&family=JetBrains+Mono:wght@400;500&display=swap"
+      rel="stylesheet" />
+  </noscript>
 
   <!-- DNS Prefetch for logo CDN -->
   <link rel="dns-prefetch" href="https://upload.wikimedia.org" />
@@ -25,9 +62,10 @@
 <body>
   <div id="root"></div>
   <noscript>
-    <div style="padding: 2rem; text-align: center; font-family: system-ui, sans-serif;">
-      <h1>Weavy — Artistic Intelligence</h1>
-      <p>Please enable JavaScript to view this application.</p>
+    <div
+      style="padding: 2rem; text-align: center; font-family: system-ui, sans-serif; background: #09090b; color: #fafafa; min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+      <h1 style="font-size: 2rem; font-weight: 700; margin-bottom: 1rem;">Weavy — Artistic Intelligence</h1>
+      <p style="color: #a1a1aa;">Please enable JavaScript to view this application.</p>
     </div>
   </noscript>
   <script type="module" src="/src/main.tsx"></script>

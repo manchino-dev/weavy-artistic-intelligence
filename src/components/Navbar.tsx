@@ -1,4 +1,3 @@
-import { m, AnimatePresence } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
@@ -38,8 +37,8 @@ export function Navbar() {
           <a href="#testimonials" className="text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:bg-neon-yellow/90 dark:hover:bg-neon-lime/90 hover:text-black px-4 py-3 rounded-full uppercase tracking-wider transition-all duration-200">
             Testimonials
           </a>
-          <a href="#pricing" className="text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:bg-neon-yellow/90 dark:hover:bg-neon-lime/90 hover:text-black px-4 py-3 rounded-full uppercase tracking-wider transition-all duration-200">
-            Pricing
+          <a href="#contact" className="text-xs font-medium text-zinc-600 dark:text-zinc-400 hover:bg-neon-yellow/90 dark:hover:bg-neon-lime/90 hover:text-black px-4 py-3 rounded-full uppercase tracking-wider transition-all duration-200">
+            Contact
           </a>
           <ThemeToggle />
           <Button className="ml-2 bg-black dark:bg-neon-lime text-white dark:text-black hover:bg-zinc-800 dark:hover:bg-neon-lime/80 font-bold rounded-full px-6 h-10 text-xs uppercase tracking-wider transition-colors">
@@ -77,8 +76,8 @@ export function Navbar() {
             <a href="#testimonials" className="text-sm font-medium text-zinc-900 dark:text-zinc-100 uppercase tracking-wider py-2" onClick={closeMenu}>
               Testimonials
             </a>
-            <a href="#pricing" className="text-sm font-medium text-zinc-900 dark:text-zinc-100 uppercase tracking-wider py-2" onClick={closeMenu}>
-              Pricing
+            <a href="#contact" className="text-sm font-medium text-zinc-900 dark:text-zinc-100 uppercase tracking-wider py-2" onClick={closeMenu}>
+              Contact
             </a>
             <Button className="w-full bg-black dark:bg-neon-lime text-white dark:text-black hover:bg-zinc-800 font-bold rounded-lg h-12 transition-colors">
               Get Started

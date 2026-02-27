@@ -24,12 +24,16 @@ jobs:
 
       - name: Build
         run: npm run build
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
 
-      - name: Serve build & run Lighthouse CI
+      - name: Install Lighthouse CI + static server
+        run: npm install -g @lhci/cli@latest serve
+
+      - name: Serve dist & run Lighthouse CI
         run: |
-          npm install -g @lhci/cli@latest serve
           serve dist -l 5000 &
-          sleep 3
+          sleep 5
           lhci autorun
         env:
           LHCI_GITHUB_APP_TOKEN: ${{ secrets.LHCI_GITHUB_APP_TOKEN }}

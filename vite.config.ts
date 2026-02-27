@@ -18,10 +18,20 @@ export default defineConfig(({ mode }) => {
     server: {
       hmr: process.env.DISABLE_HMR !== 'true',
     },
+    preview: {
+      // Aligns with lighthouserc.json and GitHub Actions serve port
+      port: 5000,
+      strictPort: true,
+    },
     build: {
-      // Target modern browsers for smaller output
-      target: 'es2020',
-      // Manual chunk splitting for better caching
+      // Target modern browsers for smallest, fastest output
+      target: 'esnext',
+      // Inline source maps skipped in production; helpful in dev
+      sourcemap: mode === 'development',
+      // Skip compressed-size computation for faster CI builds
+      reportCompressedSize: false,
+      // Split CSS per chunk for better cache granularity
+      cssCodeSplit: true,
       rollupOptions: {
         output: {
           manualChunks(id) {
@@ -34,9 +44,11 @@ export default defineConfig(({ mode }) => {
             if (id.includes('node_modules/@xyflow')) {
               return 'reactflow-vendor';
             }
-            if (id.includes('node_modules/class-variance-authority') ||
+            if (
+              id.includes('node_modules/class-variance-authority') ||
               id.includes('node_modules/clsx') ||
-              id.includes('node_modules/tailwind-merge')) {
+              id.includes('node_modules/tailwind-merge')
+            ) {
               return 'ui-vendor';
             }
           },

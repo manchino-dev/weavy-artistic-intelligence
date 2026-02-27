@@ -4,12 +4,16 @@
             "url": [
                 "http://localhost:5000/"
             ],
+            "startServerCommand": "npx serve dist -l 5000",
+            "startServerReadyPattern": "Accepting connections",
             "numberOfRuns": 3,
             "settings": {
+                "preset": "desktop",
                 "chromeFlags": "--no-sandbox --headless --disable-gpu"
             }
         },
         "assert": {
+            "preset": "lighthouse:recommended",
             "assertions": {
                 "categories:performance": [
                     "error",
@@ -34,7 +38,10 @@
                     {
                         "minScore": 0.9
                     }
-                ]
+                ],
+                "offscreen-images": "off",
+                "unused-javascript": "off",
+                "uses-long-cache-ttl": "off"
             }
         },
         "upload": {

@@ -1,6 +1,6 @@
+import React, { useState, useCallback } from "react";
 import { Button } from "@/components/ui/button";
 import { m, AnimatePresence } from "motion/react";
-import { useState, useCallback } from "react";
 import { CheckCircle2, Send } from "lucide-react";
 
 export function ContactForm() {
@@ -19,7 +19,7 @@ export function ContactForm() {
   const handleReset = useCallback(() => setIsSubmitted(false), []);
 
   return (
-    <section className="py-32 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden transition-colors">
+    <section id="contact" className="py-32 bg-zinc-50 dark:bg-zinc-950 relative overflow-hidden transition-colors">
       <div className="max-w-3xl mx-auto px-6 relative z-10">
         <m.div
           initial={{ opacity: 0, y: 40 }}

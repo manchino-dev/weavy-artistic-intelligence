@@ -20,7 +20,7 @@ export function Navbar() {
       <div className="max-w-[1920px] mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-4 md:gap-8">
           <a href="#" className="text-xl md:text-2xl font-bold tracking-tighter text-black dark:text-white uppercase border-r border-zinc-300 dark:border-zinc-700 pr-6 h-8 flex items-center">
-            Weavy
+            Manchino
           </a>
           <span className="text-[10px] md:text-xs font-medium tracking-widest text-zinc-500 dark:text-zinc-400 uppercase leading-tight max-w-[100px]">
             Artistic Intelligence

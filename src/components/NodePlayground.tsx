@@ -221,7 +221,7 @@ export function NodePlayground() {
                         <span className="text-electric-purple">pipeline</span>
                     </h2>
                     <p className="text-xl text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto">
-                        Drag nodes, connect edges, and visualize how Weavy chains AI models
+                        Drag nodes, connect edges, and visualize how Manchino chains AI models
                         into powerful creative workflows.
                     </p>
                 </m.div>

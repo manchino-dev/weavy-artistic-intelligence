@@ -6,7 +6,7 @@ export function Footer() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
           <div className="col-span-1 md:col-span-1">
-            <div className="text-2xl font-bold tracking-tighter text-black dark:text-white mb-4">Weavy</div>
+            <div className="text-2xl font-bold tracking-tighter text-black dark:text-white mb-4">Manchino</div>
             <p className="text-sm text-zinc-700 dark:text-zinc-400 leading-relaxed">
               Transforming your creative vision into scalable workflows with Artistic Intelligence.
             </p>
@@ -50,7 +50,7 @@ export function Footer() {
         </div>
 
         <div className="pt-8 border-t border-zinc-200 dark:border-zinc-800 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-xs text-zinc-600 dark:text-zinc-500">© 2025 Weavy Inc. All rights reserved.</p>
+          <p className="text-xs text-zinc-600 dark:text-zinc-500">© 2025 Manchino Inc. All rights reserved.</p>
           <div className="flex gap-6">
             <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 dark:text-zinc-600">Designed by MC</span>
           </div>

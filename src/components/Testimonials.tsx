@@ -1,7 +1,7 @@
 import { m } from "motion/react";
 
 const testimonials = [
-  { author: "Sarah Jenkins", role: "Creative Director, Studio Alpha", quote: "Weavy has completely transformed our design workflow. The ability to chain different AI models together is a game changer." },
+  { author: "Sarah Jenkins", role: "Creative Director, Studio Alpha", quote: "Manchino has completely transformed our design workflow. The ability to chain different AI models together is a game changer." },
   { author: "Marcus Chen", role: "Product Designer, TechFlow", quote: "The node-based interface is intuitive and powerful. I can prototype ideas in minutes that used to take days." },
   { author: "Elena Rodriguez", role: "VFX Supervisor, MotionWorks", quote: "Finally, a tool that brings professional-grade control to generative AI. It's an essential part of our stack now." },
 ];

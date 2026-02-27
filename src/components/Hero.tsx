@@ -13,7 +13,7 @@ export function Hero() {
         >
           <div>
             <h1 className="text-[12vw] leading-[0.8] font-medium tracking-tighter text-black dark:text-white mb-4">
-              Weavy
+              Manchino
             </h1>
           </div>
 
